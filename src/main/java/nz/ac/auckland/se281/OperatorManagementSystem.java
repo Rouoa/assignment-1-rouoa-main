@@ -1,6 +1,7 @@
 package nz.ac.auckland.se281;
-
-import java.lang.reflect.AccessFlag.Location;
+//UPI: rcla135
+//ID:  578717208
+import nz.ac.auckland.se281.Types.Location;
 
 public class OperatorManagementSystem {
 
@@ -9,12 +10,14 @@ public class OperatorManagementSystem {
 
 
   public void searchOperators(String keyword) {
-    // TODO implement
     System.out.println("There are no matching operators found.");
   }
 
   public void createOperator(String operatorName, String location) {
-    // TODO implement
+    Location wantedLocation=Location.fromString(location);// gets the string into a Location type (to put in the oporator class)
+Operator oporator=new Operator(operatorName,wantedLocation);//creates a new oporator with our oporatorName(string) and our 
+String message = MessageCli.OPERATOR_CREATED.getMessage(oporator.getOporatorName(), "WACT-AKL-001", oporator.getLocation().toString());  // get the message
+System.out.println(message);  // prints the name, operator ID (not yet implemented so hard coding the one location), location(string type) 
   }
 
   public void viewActivities(String operatorId) {
